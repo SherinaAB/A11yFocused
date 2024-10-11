@@ -1,0 +1,15 @@
+{
+  "name": "a11y-focused",
+  "version": "1.0.0",
+  "description": "Answering questions demonstrating accessibility-focued features .",
+  "main": "index.html",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "author": "Sherina Buenaseda",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "keywords": []
+}
