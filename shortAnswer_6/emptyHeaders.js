@@ -1,24 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("emptyHeaders.js is running");
-    const container = document.getElementById("container");
-    // Function to create empty headers
-    if (container) {
-        const headers = [
-            { tag:"h1", ariaLabel: "Main section: Role and Presentaions" },
-            { tag:"h2", ariaLabel: "Role section: Role and Presentaions" },
-            { tag:"h3", ariaLabel: "Presention section: Role and Presentaions" },
-            { tag:"h4", ariaLabel: "open section: Role and Presentaions" },
-            { tag:"h5", ariaLabel: "open section: Role and Presentaions" }
-        ];
-
-        // For each section, add the headers to the container
-        headers.forEach((headerInfo) => {
-            const header = document.createElement(headerInfo.tag);
-            header.setAttribute("aria-label", headerInfo.ariaLabel);
-            header.textContent = ' '; // Header intentionally empty
-            container.appendChild(header);
+    // Find all headers
+    function assignRole() {
+        headers.forEach((assignRole) => {
+        // Applying condition, if header length is 0, assign role as "presentation"
+            const headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+            // Loop thru each header, if it's empty, assign role as "presentation"
+                if (headers.textContent.trim().length === 0) {
+                  headers.setAttribute('role', 'presentation');    
+                };
         });
-    } else {
-        console.error("Container element not found.");
-    }
+    }; 
 });
