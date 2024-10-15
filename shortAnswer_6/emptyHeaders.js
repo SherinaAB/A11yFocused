@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Find all headers
     function assignRole() {
-        headers.forEach((assignRole) => {
-        // Applying condition, if header length is 0, assign role as "presentation"
-            const headers = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
-            // Loop thru each header, if it's empty, assign role as "presentation"
-                if (headers.textContent.trim().length === 0) {
-                  headers.setAttribute('role', 'presentation');    
-                };
+        const headers = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        // Loop thru each header, if it's empty, assign role as "presentation"
+        headers.forEach((header) => {
+        // Check if header is empty
+            if (header.textContent.trim() ===  "") {
+                // Assign role as "presentation" to the header
+                header.setAttribute("role", "presentation");
+            };
         });
     }; 
+    assignRole();  // Call function
 });
